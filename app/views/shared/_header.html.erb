@@ -1,0 +1,45 @@
+<h1></h1>
+<section class="hero is-link is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to root_path, class: "navbar-item" do %>
+          <svg fill="#ffffff"   xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title>ic_restaurant_48px</title>
+          <path d="M22 18h-4V4h-4v14h-4V4H6v14c0 4.25 3.32 7.69 7.5 7.95V44h5V25.95c4.18-.26 7.5-3.7 7.5-7.95V4h-4v14zm10-6v16h5v16h5V4c-5.52 0-10 4.48-10 8z"></path>
+          </svg>
+          <span class="has-text-weight-bold is-size-4 ml-4">Ethan Foodlog</span>
+          <% end %>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+           <span class="navbar-item">
+            <%= link_to "Create new entry", new_entry_path, class: "button is-sucess"   %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        <% if content_for(:title) %>
+          <%= yield :title %>
+        <% else %>
+        Foodlog
+        <% end %>
+      </h1>
+      <h2 class="subtitle">
+        </h2>
+    </div>
+  </div> 
+</section>
